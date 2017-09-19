@@ -52,6 +52,7 @@ class VideoCamera(object):
         self.this_thread.start()
 
     def __del__(self):
+        self.this_thread.stop()
         self.video.release()
 
     def get_frame(self):
